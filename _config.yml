@@ -18,22 +18,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Artist Learns Coding
-email: your-email@example.com
+title: Connecting the Dots: Artist to Programmer
+email: casswillis@tutamail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Cass Willis is a visual artist turned wannabe developer, exploring the world of generative AI, programming languages (Python, CSS, HTML), chatbot development, prompt engineering and the ethics in our creation and use of artificial intelligence.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
-
-# Build settings
-remote_theme: jekyllthemes/flexton
-plugins:
-  - jekyll-remote-theme
-
+github_username:  casswillis
 
 # Exclude from processing.
 # The following items will not be processed, by default.
