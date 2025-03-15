@@ -28,7 +28,7 @@ github_username:  casswillis
 collections:
   tags:
     output: true
-permalink: /:categories/:title/
+permalink: /:title/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
