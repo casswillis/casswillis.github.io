@@ -22,12 +22,13 @@ title: Connecting the Dots: Artist to Programmer
 email: casswillis@tutamail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Cass Willis is a visual artist turned wannabe developer, exploring the world of generative AI, programming languages (Python, CSS, HTML), chatbot development, prompt engineering and the ethics in our creation and use of artificial intelligence.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/casswillis.github.io"
+url: "https://casswillis.github.io"
 github_username:  casswillis
 collections:
   tags:
     output: true
+permalink: /:categories/:title/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
