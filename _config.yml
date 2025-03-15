@@ -22,7 +22,7 @@ title: Connecting the Dots: Artist to Programmer
 email: casswillis@tutamail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Cass Willis is a visual artist turned wannabe developer, exploring the world of generative AI, programming languages (Python, CSS, HTML), chatbot development, prompt engineering and the ethics in our creation and use of artificial intelligence.
-baseurl: "/casswillis.github.io"
+baseurl: ""
 url: "https://casswillis.github.io"
 github_username:  casswillis
 collections:
