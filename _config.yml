@@ -1,14 +1,14 @@
-title: "Connecting the Dots: From Artist to Programmer "
+permalink: /:title/
+version: 1.1  # Change the number each time you update CSS
+
+title: "Connecting the Dots: From Artist to Programmer"
 email: "casswillis@tutamail.com"
 description: >-
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Cass Willis is a visual artist and wannabe AI programmer, diving headfirst into the world of artificial intelligence, one Python script at a time. This blog is her way of documenting that journey: the struggles, the breakthroughs, and everything in between.
 
 baseurl: ""  # The subpath of your site, e.g., /blog
 url: ""  # The base hostname & protocol for your site, e.g., http://example.com
-twitter_username: "jekyllrb"
-github_username: "jekyll"
+github_username: "casswillis"
 
 # Set a theme 
 theme: minima  # Option A: Use a built-in theme
