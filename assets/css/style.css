@@ -426,14 +426,14 @@ hr {
 }
 
 .full {
-    display: none; /* Start hidden */
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
-.full:not(.hidden) {
-    display: block !important; /* ✅ Ensure visibility when toggled */
+.full.show {
+    display: block !important;
     opacity: 1 !important;
-    visibility: visible !important;
-    height: auto !important;
 }
 
 .read-less {

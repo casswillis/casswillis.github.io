@@ -24,20 +24,21 @@ document.body.addEventListener("click", function (event) {
     }
 
     if (event.target.classList.contains("read-less")) {
-        event.preventDefault();
-        console.log("✅ Read Less Clicked on:", postContainer);
+    event.preventDefault();
+    console.log("✅ Read Less Clicked on:", postContainer);
 
-        if (preview && fullPost && readMore && readLess) {
-            preview.classList.remove("hidden");
-
-            setTimeout(() => {
-                fullPost.classList.add("hidden");
-                fullPost.style.display = "none";  
-                readMore.style.display = "inline-block";  // ✅ Show "Read More" again
-                readLess.style.display = "none";  // ✅ Hide "Read Less"
-            }, 500);
-        }
+    if (preview && fullPost && readMore && readLess) {
+        fullPost.style.opacity = "0";  // Fade out before hiding
+        setTimeout(() => {
+            fullPost.classList.add("hidden");
+            fullPost.style.display = "none";  
+            preview.classList.remove("hidden");  // Ensure preview is visible
+            readMore.style.display = "inline-block";  // ✅ Show "Read More" again
+            readLess.style.display = "none";  // ✅ Hide "Read Less"
+        }, 300); // Shorter transition time
     }
+}
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {
