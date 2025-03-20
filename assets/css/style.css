@@ -143,19 +143,6 @@ h1, h2, h3 {
     scroll-margin-top: 160px;
 }
 
-/* ✅ Fix Read More/Read Less Visibility */
-.read-more, .read-less {
-    display: inline-block;
-    margin-top: 10px;
-    color: #00ffcc;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-.read-more:hover, .read-less:hover {
-    color: #ff0099;
-}
-
 /* Tags */
 .tag-box {
     background: rgba(15, 15, 15, 0.95);
@@ -423,20 +410,5 @@ hr {
     text-align: center;
     margin-top: 5px; /* ✅ Adds space below the image */
     letter-spacing: 1px;
-}
-
-.full {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.full.show {
-    display: block !important;
-    opacity: 1 !important;
-}
-
-.read-less {
-    display: none; /* Hide "Read Less" until post is expanded */
 }
 

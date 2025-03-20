@@ -52,23 +52,11 @@
                         <p class="post-meta">Published on {{ post.date | date: "%B %d, %Y" }}</p>
 
 <div class="post-content">
-    <div class="preview">
-        {{ post.content | truncatewords: 300 }}
-        <a href="#" class="read-more">Read More</a>
-    </div>
-
-    <div class="full hidden">
-        {{ post.content }}
-        <p class="copyright-text">
-            &copy; {{ site.time | date: "%Y" }} Cass Willis. All rights reserved.
-        </p>
-    </div>
-
-    <!-- ✅ Move "Read Less" outside `.full` to ensure it stays accessible -->
-    <a href="#" class="read-less hidden">Read Less</a>
+    {{ post.content }}
+    <p class="copyright-text">
+        &copy; {{ site.time | date: "%Y" }} Cass Willis. All rights reserved.
+    </p>
 </div>
-
-
 
                     </div> <!-- Closes .post-box -->
                 </div> <!-- Closes .post-container -->
