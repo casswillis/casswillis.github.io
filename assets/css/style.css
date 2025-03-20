@@ -248,8 +248,9 @@ h1, h2, h3 {
         display: none; /* Completely hide it */
     }
 
-    .sidebar.hidden {
-        transform: translateX(-100%);
+      .sidebar.show {
+        transform: translateX(0); /* Bring it back */
+        display: flex; /* Show it */
     }
 
 @media screen and (max-width: 700px) {
