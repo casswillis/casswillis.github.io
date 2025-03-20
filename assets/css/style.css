@@ -314,7 +314,7 @@ h1, h2, h3 {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 0px 20px rgba(0, 255, 204, 0.5);
-    text-align: left;
+    text-align: center;
     color: white;
     font-size: 14px;
     line-height: 1.4;
@@ -350,12 +350,14 @@ hr {
     text-align: center;
     margin-top: 20px;
 }
+
 .find-me-online a {
     font-size: 24px;
     margin: 0 15px;
     color: #00ffcc;
     transition: transform 0.3s ease, color 0.3s ease;
 }
+
 .find-me-online a:hover {
     color: #ff0099;
     transform: scale(1.2);
