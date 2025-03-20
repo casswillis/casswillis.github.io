@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <script defer src="{{ '/assets/js/script.js' | relative_url }}"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Toggle Button -->
+        <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-box">
+                <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Avatar - Cass Willis" title="Avatar - Cass Willis">
+            </div>
+
+            <p class="sidebar-subtitle">Cass Willis</p>
+
+            <!-- Sidebar Buttons -->
+            <div class="sidebar-buttons">
+                <a href="{{ site.baseurl }}/" class="neon-button">Home</a>
+                <a href="{{ site.baseurl }}/about/" class="neon-button">About Me</a>
+                <a href="{{ site.baseurl }}/tags/" class="neon-button">Browse Tags</a>
+            </div>
+
+            <div class="sidebar-footer">
+                <p><em>My blog layout and background image was created with the collaborative assistance of ChatGPT. My avatar was created by Apple Image Playground using an image of my likeness. Posts are the intellectual property of the author and may not be copied or reproduced without permission.</em></p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <main class="content">
+                <div class="banner">
+                    <img src="{{ '/assets/images/banner.png' | relative_url }}" alt="Blog Banner">
+                </div>
+                <div class="banner-spacing"></div> <!-- Extra spacing -->
+
+                {% for post in site.posts %}
+                <div class="post-container">
+                    <div class="post-box">
+                        <h2>{{ post.title }}</h2>
+                        <p class="post-meta">Published on {{ post.date | date: "%B %d, %Y" }}</p>
+
+<div class="post-content">
+    <div class="preview">
+        {{ post.content | truncatewords: 300 }}
+        <a href="#" class="read-more">Read More</a>
+    </div>
+
+    <div class="full hidden">
+        {{ post.content }}
+        <p class="copyright-text">
+            &copy; {{ site.time | date: "%Y" }} Cass Willis. All rights reserved.
+        </p>
+    </div>
+
+    <!-- ✅ Move "Read Less" outside `.full` to ensure it stays accessible -->
+    <a href="#" class="read-less hidden">Read Less</a>
+</div>
+
+
+
+                    </div> <!-- Closes .post-box -->
+                </div> <!-- Closes .post-container -->
+                {% endfor %}
+            </main>
+        </div>
+    </div>
+</body>
+</html>

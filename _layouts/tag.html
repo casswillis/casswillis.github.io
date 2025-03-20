@@ -1,0 +1,58 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script defer src="{{ site.baseurl }}/assets/js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts tagged with "{{ page.title }}" - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+<body class="tags-page">
+<button id="sidebar-toggle" class="sidebar-toggle">☰</button>
+
+<div class="container">
+    <aside class="sidebar">
+        <div class="logo-box">
+            <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Avatar">
+        </div>
+        <p class="sidebar-subtitle">Connecting the Dots</p>
+        <div class="sidebar-buttons">
+            <a href="{{ site.baseurl }}/" class="neon-button">Home</a>
+            <a href="{{ site.baseurl }}/tags/" class="neon-button">Browse Tags</a>
+        </div>
+        <div class="sidebar-footer">
+            <p><em>My blog layout and background image was created with the collaborative assistance of ChatGPT. My avatar was created by Apple Image Playground using an image of my likeness. Posts are the intellectual property of the author and may not be copied or reproduced without permission.</em></p>
+        </div>
+    </aside>
+
+    <div class="main-content">
+        <main class="content">
+            <div class="banner">
+                <img src="{{ site.baseurl }}/assets/images/banner.png" alt="Blog Banner">
+            </div>
+
+            <h1 class="page-title">Posts tagged with "{{ page.title }}"</h1>
+
+            <div class="post-container">
+    {% assign tag_name = page.title | downcase %}
+    {% for post in site.posts %}
+        {% for tag in post.tags %}
+            {% assign tag_lower = tag | downcase %}
+            {% if tag_lower == tag_name %}
+                <div class="post-box">
+                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                    <p class="post-meta">Published on {{ post.date | date: "%B %d, %Y" }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</div>
+
+        </main>
+    </div>
+</div>
+</body>
+</html>

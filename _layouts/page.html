@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script defer src="{{ site.baseurl }}/assets/js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+<body class="post-page">
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-box">
+                <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Avatar">
+            </div>
+            <p class="sidebar-subtitle">Connecting the Dots</p>
+            <div class="sidebar-buttons">
+                <a href="{{ site.baseurl }}/" class="neon-button">Home</a>
+                <a href="{{ site.baseurl }}/tags/" class="neon-button">Browse Tags</a>
+            </div>
+
+            <div class="sidebar-footer">
+                <p><em>My blog layout and background image was created with the collaborative assistance of ChatGPT. My avatar was created by Apple Image Playground using an image of my likeness. Posts are the intellectual property of the author and may not be copied or reproduced without permission.</em></p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <main class="content">
+                <h1>{{ page.title }}</h1>
+                <article class="post-content">
+                    {{ content }}
+                </article>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

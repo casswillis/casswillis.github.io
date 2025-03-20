@@ -1,0 +1,63 @@
+---
+layout: none
+title: Browse Tags
+permalink: /tags/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script defer src="{{ site.baseurl }}/assets/js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Tags - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body class="tags-page">
+<button id="sidebar-toggle" class="sidebar-toggle">☰</button>
+
+<div class="container">
+    <aside class="sidebar">
+        <div class="logo-box">
+            <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Avatar">
+        </div>
+
+        <p class="sidebar-subtitle">Browse Tags</p>
+
+        <div class="sidebar-buttons">
+            <a href="/" class="neon-button">Home</a>
+        </div>
+
+        <div class="sidebar-footer">
+            <p><em>My blog layout and background image was created with the collaborative assistance of ChatGPT. My avatar was created by Apple Image Playground using an image of my likeness. Posts are the intellectual property of the author and may not be copied or reproduced without permission.</em></p>
+        </div>
+    </aside>
+
+    <div class="main-content">
+        <main class="content">
+            <div class="banner">
+                <img src="{{ '/assets/images/banner.png' | relative_url }}" alt="Blog Banner">
+            </div>
+            <h1 class="page-title">Browse by Tags</h1>
+            <p>Select a tag to see related posts.</p>
+
+<div class="post-box">
+    <h1 class="page-title">Browse by Tags</h1>
+    <p>Select a tag to see related posts.</p>
+
+    <div class="tags">
+        <ul>
+            {% for tag in site.tags %}
+                <li>
+                    <a href="/tags/{{ tag[0] | slugify }}/">{{ tag[0] }} ({{ tag[1].size }})</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>
