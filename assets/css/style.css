@@ -131,8 +131,6 @@ body {
     color: black;
     font-size: 16px;
     line-height: 1.5;
-
-    /* ✅ Centering Fix */
     margin: 30px auto; /* Ensures center alignment on all pages */
     display: flex;
     flex-direction: column;
@@ -412,3 +410,18 @@ hr {
     letter-spacing: 1px;
 }
 
+@media screen and (max-width: 768px) {
+    .post-box {
+        width: 90%; /* Make posts skinnier on small screens */
+        max-width: 600px; /* Prevents too wide posts */
+        padding: 20px; /* Reduce padding for better spacing */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-box {
+        width: 95%; /* Make posts even skinnier for smaller screens */
+        max-width: 450px;
+        padding: 15px;
+    }
+}
