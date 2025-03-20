@@ -318,12 +318,10 @@ h1, h2, h3 {
     color: white;
     font-size: 14px;
     line-height: 1.4;
-    /* ✅ Centering Fix - No Cut-Off */
     margin: auto; /* Centers horizontally */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centers vertically */
-
 }
 
 /* ✅ Styled Horizontal Rule */
@@ -344,21 +342,20 @@ hr {
     margin: 20px 0;
 }
 
-/* 🚀 Social Media Icons */
 .find-me-online {
+    display: flex; /* ✅ Uses flexbox */
+    justify-content: center; /* ✅ Centers horizontally */
+    align-items: center; /* ✅ Centers vertically */
+    flex-wrap: wrap; /* ✅ Ensures proper wrapping */
     text-align: center;
     margin-top: 20px;
 }
-
 .find-me-online a {
-    display: inline-block;
     font-size: 24px;
     margin: 0 15px;
     color: #00ffcc;
     transition: transform 0.3s ease, color 0.3s ease;
-    text-align: center; /* ✅ Fixes alignment issue */
 }
-
 .find-me-online a:hover {
     color: #ff0099;
     transform: scale(1.2);
@@ -386,13 +383,16 @@ hr {
 }
 
 .about-image {
-    width: 180px; /* ✅ Adjust size */
+    width: 180px; 
     height: 180px;
-    border-radius: 50%; /* ✅ Makes it circular */
-    object-fit: cover; /* ✅ Ensures it fits inside the circle */
-    border: 4px solid #00ffcc; /* ✅ Neon border effect */
-    box-shadow: 0px 0px 12px rgba(0, 255, 204, 0.6); /* ✅ Soft glow effect */
+    border-radius: 50%;
+    object-fit: cover; 
+    border: 4px solid #00ffcc;
+    box-shadow: 0px 0px 12px rgba(0, 255, 204, 0.6);
+    display: block;
+    margin: 0 auto; /* ✅ Ensures it's centered */
 }
+
 
 /* 🖼️ About Page Image & Subtitle */
 .about-image-container {
@@ -410,17 +410,16 @@ hr {
     letter-spacing: 1px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     .post-box {
-        width: 90%; /* Make posts skinnier on small screens */
-        max-width: 600px; /* Prevents too wide posts */
-        padding: 20px; /* Reduce padding for better spacing */
+        width: 90%;
+        max-width: 600px; /* ✅ Ensures they aren't too wide */
+        padding: 20px;
     }
 }
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
     .post-box {
-        width: 95%; /* Make posts even skinnier for smaller screens */
+        width: 95%;
         max-width: 450px;
         padding: 15px;
     }
