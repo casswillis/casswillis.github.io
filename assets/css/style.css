@@ -19,20 +19,34 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 18%;
-    background: rgba(20, 20, 20, 0.9);
-    color: white;
-    padding: 30px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    width: 250px;
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
     height: 100vh;
-    overflow-y: auto;
-    z-index: 1000;
+    background: rgba(20, 20, 20, 0.95);
+    box-shadow: 4px 0 10px rgba(0, 255, 204, 0.5);
+    transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Show the sidebar when .show class is added */
+.sidebar.show {
+    transform: translateX(0);
+}
+
+.logo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+    margin-top: 20px;
 }
 
 /* Sidebar Logo */
@@ -105,17 +119,17 @@ body {
     justify-content: flex-start;
     min-height: 100vh;
     padding: 50px 0;
-    margin-left: auto;
-    max-width: 900px;
+    width: 60%; /* Make it a percentage for flexibility */
+    max-width: 900px; /* Avoid stretching too much on large screens */
+    
     background: rgba(20, 20, 20, 0.9); /* Adjusted opacity */
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 0px 20px rgba(0, 255, 204, 0.5);
-    min-height: 100vh;
 
-    /* ✅ Fix: Ensure it correctly adjusts after the sidebar */
-    margin-left: calc(18% + 150px); /* Sidebar width + spacing */
-    width: calc(100% - 18% - 40px); /* Adjusts dynamically */
+    /* Center it while leaving space for sidebar */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Posts */
@@ -208,22 +222,15 @@ h1, h2, h3 {
 /* ✅ Fix: Ensure Sidebar Moves When Toggled */
 .sidebar.hidden {
     transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    display: none;
-}
-
-
-.sidebar.hidden {
-    transform: translateX(-100%);
-    display: none;
 }
 
 .sidebar.hidden + .main-content {
-    margin-left: 0 !important;
-    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 70%; /* Slightly increase width when sidebar is hidden */
 }
 
-/* ✅ Fix: Make Sidebar Toggle Button Visible on Small Screens */
+/* 🌐 Small Screens: Sidebar hidden by default */
 @media screen and (max-width: 900px) {
     .sidebar {
         position: fixed;
@@ -234,30 +241,35 @@ h1, h2, h3 {
         background: rgba(20, 20, 20, 0.95);
         box-shadow: 4px 0 10px rgba(0, 255, 204, 0.5);
         transition: transform 0.3s ease-in-out;
-	transform: translateX(-100%); /* Move it off-screen */
-        display: none; /* Completely hide it */
+        z-index: 1000;
     }
 
-      .sidebar.show {
-        transform: translateX(0); /* Bring it back */
-        display: flex; /* Show it */
-    }
 
-@media screen and (max-width: 700px) {
     .main-content {
-        margin-left: 0;
-        width: 100%;
-        padding: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        padding: 20px;
     }
 }
 
-@media screen and (max-width: 700px) {
+/* 🖥️ Medium to Large Screens: Sidebar visible by default */
+@media screen and (min-width: 901px) {
+    .sidebar {
+        transform: translateX(0);
+    }
+
+    .sidebar:not(.show) {
+        transform: translateX(-100%);
+    }
+
     .main-content {
-        margin-left: 0;
-        width: 100%;
-        padding: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
     }
 }
+
 
 /* ✅ Fix: Post Box Styling for Tags Page */
 .tags-page .post-box {
@@ -417,17 +429,3 @@ hr {
     letter-spacing: 1px;
 }
 
-@media screen and (max-width: 900px) {
-    .post-box {
-        width: 90%;
-        max-width: 600px; /* ✅ Ensures they aren't too wide */
-        padding: 20px;
-    }
-}
-@media screen and (max-width: 600px) {
-    .post-box {
-        width: 95%;
-        max-width: 450px;
-        padding: 15px;
-    }
-}
