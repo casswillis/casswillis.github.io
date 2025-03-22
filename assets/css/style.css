@@ -429,3 +429,59 @@ hr {
     letter-spacing: 1px;
 }
 
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .main-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .post-box,
+    .about-container {
+        width: 100%;
+        padding: 20px;
+        font-size: 15px;
+    }
+
+    .about-header {
+        font-size: 26px;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 80%; /* Smaller sidebar for mobile */
+    }
+
+    .sidebar-toggle {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+
+    .neon-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .banner img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .about-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .find-me-online a {
+        font-size: 20px;
+        margin: 0 10px;
+    }
+}
+
+html {
+    font-size: 95%;
+}
