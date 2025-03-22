@@ -33,7 +33,10 @@ body {
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
+    overflow-y: auto; /* ✅ this was misnested */
+    max-height: 100vh;
 }
+
 
 /* Show the sidebar when .show class is added */
 .sidebar.show {
@@ -322,6 +325,13 @@ h1, h2, h3 {
     border-bottom: 2px solid rgba(0, 255, 204, 0.5);
 }
 
+.about-header,
+.post-box h1 {
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+}
+
 /* 🖼️ About Page Content Box */
 .about-container {
     width: 90%;
@@ -430,6 +440,10 @@ hr {
 }
 
 @media screen and (max-width: 600px) {
+    html {
+        font-size: 95%;
+    }
+
     body {
         font-size: 14px;
         line-height: 1.4;
@@ -440,20 +454,39 @@ hr {
         padding: 15px;
     }
 
-    .post-box,
+    .post-box {
+        width: 100%;
+        padding: 20px;
+        font-size: 15px;
+        background: rgba(255, 240, 245, 0.95); /* 🌸 Pink glow! */
+        color: black;
+    }
+
     .about-container {
         width: 100%;
         padding: 20px;
         font-size: 15px;
     }
 
-    .about-header {
+    .about-header,
+    .post-box h1 {
         font-size: 26px;
         padding: 10px;
     }
 
     .sidebar {
-        width: 80%; /* Smaller sidebar for mobile */
+        width: 80%;
+        overflow-y: auto;
+        max-height: 100vh;
+    }
+
+    .sidebar-buttons {
+        gap: 10px;
+    }
+
+    .sidebar-footer {
+        padding: 10px;
+        font-size: 11px;
     }
 
     .sidebar-toggle {
@@ -482,6 +515,3 @@ hr {
     }
 }
 
-html {
-    font-size: 95%;
-}
